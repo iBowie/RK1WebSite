@@ -32,7 +32,11 @@ app.UseSession();
 app.UseDeveloperExceptionPage();
 app.UseStatusCodePages();
 app.UseStaticFiles();
-app.UseMvcWithDefaultRoute();
+app.UseMvc(routes =>
+{
+    routes.MapRoute("default", "{controller=Home}/{action=Index}/{id?}");
+    routes.MapRoute("categoryFilter", "Cars/{action}/{category?}", new {Controller = "Cars", action = "List", });
+});
 
 using (var scope = app.Services.CreateScope())
 {

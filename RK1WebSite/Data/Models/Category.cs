@@ -6,5 +6,6 @@
         public string Name { get; set; }
         public string Description { get; set; }
         public List<Car> Cars { get; set; }
+        public string ApiName { get; set; }
     }
 }

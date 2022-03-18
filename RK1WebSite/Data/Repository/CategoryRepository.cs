@@ -19,5 +19,10 @@ namespace RK1WebSite.Data.Repository
                 return appDbContent.Categories;
             }
         }
+
+        public Category? GetCategoryFromApiName(string apiName)
+        {
+            return AllCategories.FirstOrDefault(d => string.Equals(d.ApiName, apiName, StringComparison.OrdinalIgnoreCase));
+        }
     }
 }

@@ -15,14 +15,21 @@ namespace RK1WebSite.Data.Mocks
                     {
                         Name = "Электромобили",
                         Description = "Современный вид транспорта",
+                        ApiName = "electro",
                     },
                     new Category()
                     {
                         Name = "Классические автомобили",
                         Description = "Машины с двигателем внутреннего сгорания",
+                        ApiName = "classic",
                     },
                 };
             }
+        }
+
+        public Category? GetCategoryFromApiName(string apiName)
+        {
+            return AllCategories.FirstOrDefault(d => string.Equals(d.ApiName, apiName, StringComparison.OrdinalIgnoreCase));
         }
     }
 }

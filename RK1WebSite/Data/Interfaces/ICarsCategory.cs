@@ -5,5 +5,6 @@ namespace RK1WebSite.Data.Interfaces
     public interface ICarsCategory
     {
         IEnumerable<Category> AllCategories { get; }
+        Category? GetCategoryFromApiName(string apiName);
     }
 }

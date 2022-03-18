@@ -89,6 +89,7 @@ namespace RK1WebSite.Data
                         {
                             Name = "Электромобили",
                             Description = "Современный вид транспорта",
+                            ApiName = "electro",
                         }
                     },
                     { 
@@ -97,6 +98,7 @@ namespace RK1WebSite.Data
                         {
                             Name = "Классические автомобили",
                             Description = "Машины с двигателем внутреннего сгорания",
+                            ApiName = "classic",
                         }
                     },
                 };
