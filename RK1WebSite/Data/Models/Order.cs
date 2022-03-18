@@ -33,6 +33,6 @@ namespace RK1WebSite.Data.Models
         [ScaffoldColumn(false)]
         public DateTime OrderTime { get; set; }
 
-        public List<OrderDetail> Details { get; set; }
+        public List<OrderDetail> Details { get; set; } = new List<OrderDetail>();
     }
 }
