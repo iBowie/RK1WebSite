@@ -15,6 +15,7 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 });
 builder.Services.AddTransient<IAllCars, CarRepository>();
 builder.Services.AddTransient<ICarsCategory, CategoryRepository>();
+builder.Services.AddTransient<IAllOrders, OrdersRepository>();
 builder.Services.AddMvc((options) =>
 {
     options.EnableEndpointRouting = false;
