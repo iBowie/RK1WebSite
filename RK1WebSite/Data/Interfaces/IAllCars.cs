@@ -6,6 +6,6 @@ namespace RK1WebSite.Data.Interfaces
     {
         IEnumerable<Car> Cars { get; set; }
         IEnumerable<Car> FavoriteCars { get; set; }
-        Car GetObjectCar(int id); // why not 'GetCarByID'
+        Car? GetObjectCar(int id); // why not 'GetCarByID'
     }
 }
