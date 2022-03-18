@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using RK1WebSite.Data;
 using RK1WebSite.Data.Interfaces;
+using RK1WebSite.Data.Models;
 using RK1WebSite.Data.Repository;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -19,8 +20,15 @@ builder.Services.AddMvc((options) =>
     options.EnableEndpointRouting = false;
 });
 
+builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+builder.Services.AddScoped(sp => ShopCart.GetCart(sp));
+
+builder.Services.AddMemoryCache();
+builder.Services.AddSession();
+
 var app = builder.Build();
 
+app.UseSession();
 app.UseDeveloperExceptionPage();
 app.UseStatusCodePages();
 app.UseStaticFiles();

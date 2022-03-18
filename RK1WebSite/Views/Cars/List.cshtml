@@ -6,12 +6,7 @@
 	@{
 		foreach(var car in Model.AllCars)
 		{
-			<div class="col-lg-4">
-				<img class="img-thumbnail" src="@car.Image" alt="@car.Name"/>
-				<h2>Модель: @car.Name</h2>
-				<p>Цена: @car.Price.ToString("C")</p>
-				<p><a class="btn btn-warning" href="#">Подробнее</a></p>
-			</div>
+			@await Html.PartialAsync("AllCars", car)
 		}
 	}
 </div>
